@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Sometype_Mono } from "next/font/google";
 import "./globals.css";
 
+import { Header } from "@/components/header";
 import { MainNav } from "@/components/main-nav";
+import { Gradient } from "@/components/gradient";
+import { PageTransition } from "@/components/page-transition";
+import { RectangleTransition } from "@/components/rectangle-transition";
 
 const sometypeMono = Sometype_Mono({
   variable: "--font-sometypeMono",
@@ -22,16 +26,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sometypeMono.variable} antialiased`}>
-        <div className="flex">
-          <div className="hidden 2xl:flex w-[285px] h-screen bg-secondary">
-            <MainNav />
+      <body
+        className={`${sometypeMono.variable} antialiased overflow-hidden relative`}
+      >
+        <Gradient />
+        <RectangleTransition />
+        <PageTransition>
+          <div className="flex">
+            <div className="hidden 2xl:flex w-[285px] h-screen bg-secondary">
+              <MainNav />
+            </div>
+            <div className="w-full max-w-[1130px] px-[15px] mx-auto">
+              <Header />
+              <div>{children}</div>
+            </div>
           </div>
-          <div className="w-full max-w-[1130px] px-[15px] mx-auto bg-pink-50/10">
-            <header>header</header>
-            <div>{children}</div>
-          </div>
-        </div>
+        </PageTransition>
       </body>
     </html>
   );
