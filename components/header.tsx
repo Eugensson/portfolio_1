@@ -20,7 +20,7 @@ export const Header = () => {
         <div className="py-6 flex items-center justify-between">
           <Logo />
           <Sheet>
-            <SheetTrigger className="cursor-pointer text-[30px] text-white">
+            <SheetTrigger className="cursor-pointer text-3xl text-white">
               <CiMenuFries />
             </SheetTrigger>
             <SheetContent
@@ -35,7 +35,7 @@ export const Header = () => {
                   Navigation menu
                 </SheetDescription>
               </SheetHeader>
-              <NavLinks containerStyles="flex flex-col gap-8 max-w-[100px]" />
+              <NavLinks containerStyles="flex flex-col gap-8 max-w-25" />
               <div>
                 <button type="button" className="btn btn-lg btn-tertiary mb-16">
                   <div className="flex items-center gap-3">
@@ -45,7 +45,7 @@ export const Header = () => {
                 </button>
                 <Socials
                   containerStyles="flex gap-4"
-                  iconStyles="bg-accent hover:bg-accent-hover text-white transition w-10 h-10 text-[20px] flex items-center justify-center rounded-full cursor-pointer"
+                  iconStyles="bg-accent hover:bg-accent-hover text-white transition w-10 h-10 text-xl flex items-center justify-center rounded-full cursor-pointer"
                 />
               </div>
             </SheetContent>

@@ -36,7 +36,7 @@ const Home = () => {
               cursor={false}
             />
           </h1>
-          <p className="max-w-125 mb-11">
+          <p className="w-full max-w-125 mb-11">
             I build visually captivating, user-friendly websites and web apps
             that transform your ideas into seamless, engaging digital
             experiences.
