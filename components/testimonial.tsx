@@ -6,20 +6,7 @@ import { Autoplay } from "swiper/modules";
 import { ImQuotesLeft } from "react-icons/im";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const testimonials = [
-  {
-    message: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    name: "John Doe",
-  },
-  {
-    message: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    name: "John Doe",
-  },
-  {
-    message: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    name: "John Doe",
-  },
-];
+import { TESTIMONIAL_LIST } from "@/constants";
 
 export const Testimonial = () => {
   return (
@@ -29,7 +16,7 @@ export const Testimonial = () => {
       autoplay={{ delay: 4000, disableOnInteraction: false }}
       className="w-full max-w-77.5 md:max-w-130 bg-secondary rounded-lg"
     >
-      {testimonials.map(({ message, name }, index) => (
+      {TESTIMONIAL_LIST.map(({ message, name }, index) => (
         <SwiperSlide key={index}>
           <div className="px-8 py-6 flex gap-8">
             <ImQuotesLeft className="hidden xl:flex text-8xl text-accent" />

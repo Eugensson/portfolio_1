@@ -4,38 +4,11 @@ import "swiper/css";
 import Link from "next/link";
 import "swiper/css/pagination";
 import Image from "next/image";
-
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
-const servicesList = [
-  {
-    icon: "/assets/services/design.svg",
-    href: "",
-    title: "Website Interface Design",
-  },
-  {
-    icon: "/assets/services/frontend.svg",
-    href: "",
-    title: "Frontend Development",
-  },
-  {
-    icon: "/assets/services/backend.svg",
-    href: "",
-    title: "Backend Development",
-  },
-  {
-    icon: "/assets/services/seo.svg",
-    href: "",
-    title: "Search Engine Optimization",
-  },
-  {
-    icon: "/assets/services/video.svg",
-    href: "",
-    title: "Video Production",
-  },
-];
+import { SERVICE_LIST } from "@/constants";
 
 export const ServicesSlider = () => {
   return (
@@ -50,7 +23,7 @@ export const ServicesSlider = () => {
       pagination={{ clickable: true, dynamicBullets: true }}
       className="h-80"
     >
-      {servicesList.map(({ icon, href, title }, index) => (
+      {SERVICE_LIST.map(({ icon, href, title }, index) => (
         <SwiperSlide key={index}>
           <div className="w-full h-71 px-7.5 py-10 flex flex-col justify-between rounded-[20px] bg-secondary/90">
             <div className="mb-12 flex items-center justify-between">

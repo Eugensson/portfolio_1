@@ -41,7 +41,11 @@ const Home = () => {
             that transform your ideas into seamless, engaging digital
             experiences.
           </p>
-          <button type="button" className="btn btn-lg btn-accent mb-16 gap-3">
+          <button
+            type="button"
+            className="btn btn-lg btn-accent mb-16 gap-3"
+            aria-label="Contact me"
+          >
             <span>Let&apos;s talk.</span>
             <MdArrowOutward className="text-xl" />
           </button>

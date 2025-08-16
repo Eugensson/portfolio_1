@@ -169,7 +169,11 @@ const Contact = () => {
                     className="min-h-40 bg-white/5 border-white/10 focus-visible:border-accent focus-visible:ring-accent resize-none p-4 selection:bg-accent placeholder:text-white/50"
                   />
                 </div>
-                <button type="button" className="btn btn-lg btn-accent">
+                <button
+                  type="button"
+                  className="btn btn-lg btn-accent"
+                  aria-label="Send message"
+                >
                   <div className="flex items-center gap-3">
                     <span className="font-medium">Send message</span>
                     <HiOutlineArrowLongRight className="text-xl" />

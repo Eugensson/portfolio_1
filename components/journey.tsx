@@ -1,29 +1,13 @@
-const journies = [
-  {
-    years: "2022 - present",
-    role: "Web Developer & Designer",
-    institution: "Tech Inc.",
-  },
-  {
-    years: "2020 - 2022",
-    role: "Web Developer",
-    institution: "Alpha Inc.",
-  },
-  {
-    years: "2016 - 2020",
-    role: "Student",
-    institution: "Univercity of Design",
-  },
-];
+import { JOURNIE_LIST } from "@/constants";
 
 export const Journey = () => {
   return (
     <section className="flex flex-col">
-      <h2 className="h2 mb-8">
+      <h3 className="h2 mb-8">
         Education & <span className="text-accent">Experience</span>
-      </h2>
+      </h3>
       <ul>
-        {journies.map(({ years, role, institution }, index) => (
+        {JOURNIE_LIST.map(({ years, role, institution }, index) => (
           <li key={index} className="w-full flex items-center gap-12">
             <div className="w-max flex flex-col items-center justify-center">
               <div className="size-3 bg-accent rounded-full" />

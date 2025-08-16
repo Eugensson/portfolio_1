@@ -24,7 +24,11 @@ const Services = () => {
             Custom&nbsp;<span className="text-accent">Web Solutions</span>
             &nbsp;to Boost Your Business
           </h2>
-          <button type="button" className="btn btn-lg btn-accent flex gap-2">
+          <button
+            type="button"
+            className="btn btn-lg btn-accent flex gap-2"
+            aria-label="View all services"
+          >
             All Services
             <MdArrowRightAlt size={24} />
           </button>

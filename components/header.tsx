@@ -37,7 +37,11 @@ export const Header = () => {
               </SheetHeader>
               <NavLinks containerStyles="flex flex-col gap-8 max-w-25" />
               <div>
-                <button type="button" className="btn btn-lg btn-tertiary mb-16">
+                <button
+                  type="button"
+                  className="btn btn-lg btn-tertiary mb-16"
+                  aria-label="Download CV"
+                >
                   <div className="flex items-center gap-3">
                     <span>Download CV</span>
                     <MdFileDownload className="text-xl" />

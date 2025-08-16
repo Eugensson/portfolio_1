@@ -11,101 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const projects = [
-  {
-    id: "1",
-    category: "frontend",
-    title: "LaunchWave Landing Page",
-    description: "React + Tailwind landing page",
-    image: "/assets/work/thumb1.png",
-    link: "",
-    github: "",
-    tech: ["React", "Tailwind CSS", "Framer Motion"],
-  },
-  {
-    id: "2",
-    category: "frontend",
-    title: "Nextfolio Portfolio Site",
-    description: "Next.js portfolio site",
-    image: "/assets/work/thumb2.png",
-    link: "",
-    github: "",
-    tech: ["Next.js", "Tailwind CSS", "Shadcn UI"],
-  },
-  {
-    id: "3",
-    category: "fullstack",
-    title: "Authboard Dashboard",
-    description: "MERN-stack APP with autentication",
-    image: "/assets/work/thumb3.png",
-    link: "",
-    github: "",
-    tech: ["React", "Express", "Node.js", "MongoDB"],
-  },
-  {
-    id: "4",
-    category: "fullstack",
-    title: "Chatsync Platform",
-    description: "Real-time MERN-stack APP with chat functionality",
-    image: "/assets/work/thumb4.png",
-    link: "",
-    github: "",
-    tech: ["React", "Express", "Node.js", "MongoDB", "Socket.io", "Redux"],
-  },
-  {
-    id: "5",
-    category: "uiux",
-    title: "Mobile-first Figma Design",
-    description: "Real-time MERN-stack APP with chat functionality",
-    image: "/assets/work/thumb5.png",
-    link: "",
-    github: "",
-    tech: ["Fifma", "AdobeXD"],
-  },
-  {
-    id: "6",
-    category: "uiux",
-    title: "ShopEasy Dashboard Redesign",
-    description: "Redesign of e-commerce dashboard",
-    image: "/assets/work/thumb1.png",
-    link: "",
-    github: "",
-    tech: ["Fifma", "Framer", "Whimsical"],
-  },
-  {
-    id: "7",
-    category: "branding",
-    title: "BrewHouse Brand Identity",
-    description: "A bold and earthy visual identity for a modern coffee brand",
-    image: "/assets/work/thumb3.png",
-    link: "",
-    github: "",
-    tech: ["Illustrator", "Photoshop", "Figma"],
-  },
-  {
-    id: "8",
-    category: "branding",
-    title: "LunaSkin Luxury Branding",
-    description: "Elegant brending for a premium skincare product line",
-    image: "/assets/work/thumb4.png",
-    link: "",
-    github: "",
-    tech: ["Photoshop", "Figma", "Canva"],
-  },
-  {
-    id: "9",
-    category: "branding",
-    title: "NovaTech Brand Kit",
-    description:
-      "Full branding kit for a tech startup including logo and brand book",
-    image: "/assets/work/thumb5.png",
-    link: "",
-    github: "",
-    tech: ["Illustrator", "Figma", "Notion"],
-  },
-];
-
-const categories = ["frontend", "fullstack", "uiux", "branding"];
+import { CATEGORY_LIST, PROJECT_LIST } from "@/constants";
 
 export const WorkTabs = () => {
   return (
@@ -118,7 +24,7 @@ export const WorkTabs = () => {
         className="w-full flex flex-col gap-6 xl:gap-12"
       >
         <TabsList className="h-full mb-4 xl:mb-0 flex flex-wrap items-center justify-center gap-4">
-          {categories.map((category) => (
+          {CATEGORY_LIST.map((category) => (
             <TabsTrigger
               key={category}
               value={category}
@@ -129,7 +35,7 @@ export const WorkTabs = () => {
           ))}
         </TabsList>
         <div className="h-100 scrollbar scrollbar-thumb-accent scrollbar-track-accent/5 overflow-y-scroll xl:overflow-y-visible">
-          {categories.map((category) => (
+          {CATEGORY_LIST.map((category) => (
             <TabsContent key={category} value={category}>
               <Swiper
                 spaceBetween={30}
@@ -138,58 +44,60 @@ export const WorkTabs = () => {
                 pagination={{ clickable: true, dynamicBullets: true }}
                 className="h-max xl:h-110"
               >
-                {projects
-                  .filter((project) => project.category === category)
-                  .map((project) => (
-                    <SwiperSlide key={project.id} className="h-full">
-                      <div className="flex flex-col xl:flex-row gap-8 xl:gap-12">
-                        <div className="w-full max-w-95 flex flex-col gap-6 xl:gap-8 xl:pt-6 order-2 xl:order-none">
-                          <h3 className="h3">{project.title}</h3>
-                          <div className="xl:mb-4 max-w-75 min-h-32.5">
-                            <p className="mb-4">Technology Used</p>
-                            <ul className="flex flex-wrap gap-4">
-                              {project.tech.map((item) => (
-                                <li
-                                  key={item}
-                                  className="flex items-center gap-4 bg-[#a883ff]/13 h-7 px-3.5 rounded-full"
-                                >
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div className="flex flex-col sm:flex-row items-start gap-4">
-                            <Link href={project.link}>
-                              <button
-                                type="button"
-                                className="btn btn-sm btn-accent flex gap-2"
+                {PROJECT_LIST.filter(
+                  (project) => project.category === category
+                ).map((project) => (
+                  <SwiperSlide key={project.id} className="h-full">
+                    <div className="flex flex-col xl:flex-row gap-8 xl:gap-12">
+                      <div className="w-full max-w-95 flex flex-col gap-6 xl:gap-8 xl:pt-6 order-2 xl:order-none">
+                        <h3 className="h3">{project.title}</h3>
+                        <div className="xl:mb-4 max-w-75 min-h-32.5">
+                          <p className="mb-4">Technology Used</p>
+                          <ul className="flex flex-wrap gap-4">
+                            {project.tech.map((item) => (
+                              <li
+                                key={item}
+                                className="flex items-center gap-4 bg-[#a883ff]/13 h-7 px-3.5 rounded-full"
                               >
-                                <MdArrowOutward size={20} />
-                                <span>Live Project</span>
-                              </button>
-                            </Link>
-                            <Link href={project.github}>
-                              <button
-                                type="button"
-                                className="btn btn-sm btn-white flex gap-2"
-                              >
-                                <FaGithub size={20} />
-                                <span>Github repo</span>
-                              </button>
-                            </Link>
-                          </div>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <div className="w-full h-50 md:h-75 xl:h-100 relative order-1 xl:order-none rounded-lg overflow-hidden">
-                          <Image
-                            src={project.image}
-                            alt={project.title}
-                            fill
-                            className="object-cover"
-                          />
+                        <div className="flex flex-col sm:flex-row items-start gap-4">
+                          <Link href={project.link}>
+                            <button
+                              type="button"
+                              className="btn btn-sm btn-accent flex gap-2"
+                              aria-label="View live project"
+                            >
+                              <MdArrowOutward size={20} />
+                              <span>Live Project</span>
+                            </button>
+                          </Link>
+                          <Link href={project.github}>
+                            <button
+                              type="button"
+                              className="btn btn-sm btn-white flex gap-2"
+                              aria-label="View code in Github repo"
+                            >
+                              <FaGithub size={20} />
+                              <span>Github repo</span>
+                            </button>
+                          </Link>
                         </div>
                       </div>
-                    </SwiperSlide>
-                  ))}
+                      <div className="w-full h-50 md:h-75 xl:h-100 relative order-1 xl:order-none rounded-lg overflow-hidden">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </TabsContent>
           ))}

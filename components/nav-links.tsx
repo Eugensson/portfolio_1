@@ -4,14 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-
-const links = [
-  { name: "home", path: "/" },
-  { name: "about", path: "/about" },
-  { name: "services", path: "/services" },
-  { name: "work", path: "/work" },
-  { name: "contact", path: "/contact" },
-];
+import { NAV_LINKS } from "@/constants";
 
 interface NavLinksProps {
   containerStyles: string;
@@ -22,7 +15,7 @@ export const NavLinks = ({ containerStyles }: NavLinksProps) => {
 
   return (
     <ul className={containerStyles}>
-      {links.map(({ name, path }) => {
+      {NAV_LINKS.map(({ name, path }) => {
         const isActive = pathname === path;
         const lineWidth = name.length > 5 ? "after:w-[120%]" : "after:w-[90%]";
 

@@ -9,7 +9,11 @@ export const MainNav = () => {
       <div className="h-full flex flex-col items-center justify-between">
         <Logo />
         <NavLinks containerStyles="space-y-6" />
-        <button type="button" className="btn btn-lg btn-tertiary mb-16">
+        <button
+          type="button"
+          className="btn btn-lg btn-tertiary mb-16"
+          aria-label="Download CV"
+        >
           <div className="flex items-center gap-3">
             <span>Download CV</span>
             <MdFileDownload className="text-xl" />
