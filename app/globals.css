@@ -24,6 +24,16 @@ body {
   @apply font-primary bg-primary text-white leading-relaxed;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 .h1 {
   @apply text-[40px] md:text-[52px] xl:text-[56px] leading-[1] tracking-tight font-extrabold;
 }
