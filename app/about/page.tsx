@@ -1,7 +1,6 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { Metadata } from "next";
+import * as motion from "motion/react-client";
 
 import { Blob } from "@/components/blob";
 import { Info } from "@/components/info";
@@ -11,6 +10,10 @@ import { Socials } from "@/components/socials";
 import { Journey } from "@/components/journey";
 import { Testimonial } from "@/components/testimonial";
 import { ScrollArea } from "@/components/ui/scroll-area";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 const About = () => {
   return (

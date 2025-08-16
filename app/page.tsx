@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { MdArrowOutward } from "react-icons/md";
 import { TypeAnimation } from "react-type-animation";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";

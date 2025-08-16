@@ -1,8 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { Metadata } from "next";
 import { FaGithub } from "react-icons/fa";
+import * as motion from "motion/react-client";
 import { HiOutlinePhone, HiOutlineMail } from "react-icons/hi";
 import { HiOutlineMapPin, HiOutlineArrowLongRight } from "react-icons/hi2";
 
@@ -16,6 +15,10 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
 
 const Contact = () => {
   return (

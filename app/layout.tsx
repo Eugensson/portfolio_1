@@ -14,7 +14,10 @@ const sometypeMono = Sometype_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jake Joe's portfolio",
+  title: {
+    default: "Jake Joe's Portfolio",
+    template: "%s | Jake Joe's Portfolio",
+  },
   description:
     "Jake Joe's portfolio website built with Next.js, Tailwind CSS, TypeScript, Shadcn UI, motion library, and more.",
 };
