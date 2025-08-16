@@ -18,7 +18,10 @@ export const Skills = () => {
           <li key={index}>
             <TooltipProvider>
               <Tooltip>
-                <TooltipTrigger className="size-16 flex items-center justify-center rounded-full bg-tertiary/70 group">
+                <TooltipTrigger
+                  className="size-16 flex items-center justify-center rounded-full bg-tertiary/70 group"
+                  aria-label={`${name} skill`}
+                >
                   <Icon
                     size={30}
                     className="group-hover:text-accent transition-all duration-300"

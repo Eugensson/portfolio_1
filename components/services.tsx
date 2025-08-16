@@ -31,11 +31,12 @@ export const ServicesSlider = () => {
               <Link
                 href={href}
                 className="size-12 flex items-center justify-center bg-accent rounded-full cursor-pointer text-2xl hover:rotate-45 transition-all duration-300"
+                aria-label={`${title} link`}
               >
                 <MdOutlineArrowOutward />
               </Link>
             </div>
-            <h5 className="max-w-60 text-2xl font-medium">{title}</h5>
+            <h3 className="max-w-60 text-2xl font-medium">{title}</h3>
           </div>
         </SwiperSlide>
       ))}
