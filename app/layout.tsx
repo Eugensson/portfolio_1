@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sometype_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 import { Header } from "@/components/header";
@@ -45,6 +46,7 @@ export default function RootLayout({
             </div>
           </div>
         </PageTransition>
+        <Analytics />
       </body>
     </html>
   );
